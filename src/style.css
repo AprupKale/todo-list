@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Barlow';
+    src: url(./fonts/Barlow-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url(./fonts/Caveat-Medium.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    cursor: default;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    grid-template-columns: 2fr 5fr;
+}
+
+h1 {
+    font-size: calc(calc(3vw + 5vh) / 1.5);
+}
+
+h2 {
+    font-size: calc(calc(3vw + 5vh) / 3);
+}
+
+h3 {
+    font-size: calc(calc(3vw + 5vh) / 4);
+}
+
+.header {
+    background-color: #277da1;
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Caveat';
+}
+
+.header>* {
+    display: inline-block;
+    padding: calc((3vw + 5vh) / 6);
+}
+
+.header>img {
+    width: calc((3vw + 5vh) / 1.5);
+    height: auto;
+}
+
+.sidebar {
+    background-color: rgb(39, 125, 161, 0.7);
+    font-family: 'Barlow';
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.sidebar div {
+    margin-top: calc(calc(3vw + 5vh) / 5);
+    padding-left: 5%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    box-sizing: border-box;
+}
+
+.sidebar .division {
+    width: 100%;
+}
+
+.sidebar .division>* {
+    display: inline-block;
+}
+
+.sidebar>.division>img {
+    width: calc(calc(3vw + 5vh) / 3);
+    height: auto;
+    margin: 0 calc(calc(3vw + 5vh) / 3);
+}
+
+.sidebar .projects div {
+    margin-top: calc(calc(3vw + 5vh) / 6);
+    padding-left: 5%;
+    margin-left: 5%
+}
+
+.sidebar .projects {
+    width: 100%;
+}
+
+.sidebar .projects .division {
+    width: 100%;
+}
+
+.sidebar .projects .division>* {
+    display: inline-block;
+}
+
+.sidebar>.projects>.division>img {
+    width: calc(calc(3vw + 5vh) / 4);
+    height: auto;
+    margin: 0 calc(calc(3vw + 5vh) / 4);
+}
+
+.sidebar .division:hover {
+    background-color: #577590;
+}
+
+.sidebar .selected {
+    background-color: #577590;
+}
