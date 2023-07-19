@@ -120,3 +120,130 @@ h3 {
 .sidebar .selected {
     background-color: #577590;
 }
+
+.sidebar button {
+    width: 10%;
+    height: 10ch;
+    border: #f3722c 2px solid;
+    background-color:#f8961e;
+    border-radius: 32px;
+    position: fixed;
+    font-family: 'Barlow';
+    font-size: calc(calc(3vw + 5vh) / 6);
+    font-weight: bold;
+}
+
+.sidebar button:hover {
+    background-color: rgb(248, 150, 30, 0.5);
+}
+
+#new-task {
+    bottom: 5vh;
+    left: 15%;
+}
+
+#new-project {
+    bottom: 5vh;
+    left: 3%;
+}
+
+.main form {
+    position: relative;
+    width: 30%;
+    top: 5vh;
+    margin: auto;
+    padding: 8px;
+    border: #277da1 4px solid;
+    background-color: #577590;
+    border-radius: 16px;
+    font-family: 'Barlow';
+    font-size: calc(calc(3vw + 5vh) / 4);
+}
+
+.main form>* {
+    margin: 8px;
+    margin-bottom: 2vh;
+}
+
+.main form div>* {
+    display: block;
+}
+
+.main form div.inline>* {
+    display: inline;
+}
+
+.main form input {
+    margin-top: 2vh;
+    width: 15vw;
+    height: 3ch;
+    background-color: lightgray;
+    border-radius: 16px;
+    border: none;
+    padding: 4px 4ch;
+    cursor: auto;
+    font-family: 'Barlow';
+    font-size: calc(calc(3vw + 5vh) / 6);
+}
+
+.main form textarea {
+    margin-top: 2vh;
+    width: 15vw;
+    background-color: lightgray;
+    border-radius: 16px;
+    border: none;
+    padding: 4px 4ch;
+    cursor: auto;
+    font-family: 'Barlow';
+    font-size: calc(calc(3vw + 5vh) / 6);
+}
+
+.main form select {
+    margin-top: 2vh;
+    width: 15vw;
+    height: 3ch;
+    background-color: lightgray;
+    border-radius: 16px;
+    border: none;
+    padding: 4px 4ch;
+    cursor: auto;
+    font-family: 'Barlow';
+    font-size: calc(calc(3vw + 5vh) / 6);
+}
+
+.main form button {
+    width: 35%;
+    height: 5ch;
+    border: #f3722c 2px solid;
+    background-color:#f8961e;
+    border-radius: 32px;
+    font-weight: bold;
+    font-family: 'Barlow';
+    font-size: calc(calc(3vw + 5vh) / 6);
+    margin-top: 1vh;
+    position: relative;
+}
+
+label[for="priority"] {
+    display: inline;
+}
+
+.main form input[type="checkbox"] {
+    display: inline;
+    width: 2vw;
+    height: 3ch;
+    margin-top: none;
+}
+
+#create {
+    bottom: 1vh;
+}
+
+#cancel {
+    right: 5%;
+    bottom: 1vh;
+}
+
+.main form button:hover {
+    background-color: rgb(248, 150, 30, 0.5);
+}
