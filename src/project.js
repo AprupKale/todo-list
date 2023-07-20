@@ -1,23 +1,23 @@
 function Project(name) {
-    let tasks = [];
+  let tasks = [];
 
-    function getName() {
-        return name;
-    }
+  function getName() {
+    return name;
+  }
 
-    function getTasks() {
-        return tasks;
-    }
+  function getTasks() {
+    return tasks;
+  }
 
-    function addTask(task) {
-        tasks.push(task);
-    }
+  function addTask(task) {
+    tasks.push(task);
+  }
 
-    function removeTask(task) {
-        tasks.filter(t => task.equals(t));
-    }
+  function removeTask(task) {
+    tasks.filter((t) => task.equals(t));
+  }
 
-    return { getName, getTasks, addTask, removeTask };
+  return { getName, getTasks, addTask, removeTask };
 }
 
 export { Project };

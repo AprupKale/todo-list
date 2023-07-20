@@ -1,65 +1,68 @@
-import { all, today, week, important, projects } from './index.js';
-import { addEvents, newProjectFormEvents, newTaskFormEvents } from './events.js';
-import checklist from './images/icons/checklist.svg';
-import allImage from './images/icons/all.svg';
-import todayImage from './images/icons/today.svg';
-import weekImage from './images/icons/week.svg';
-import importantImage from './images/icons/priority.svg';
-import projectImage from './images/icons/project.svg';
+import { all, today, week, important, projects } from "./index.js";
+import {
+  addEvents,
+  newProjectFormEvents,
+  newTaskFormEvents,
+} from "./events.js";
+import checklist from "./images/icons/checklist.svg";
+import allImage from "./images/icons/all.svg";
+import todayImage from "./images/icons/today.svg";
+import weekImage from "./images/icons/week.svg";
+import importantImage from "./images/icons/priority.svg";
+import projectImage from "./images/icons/project.svg";
 
 function updateDisplay(selectedProject) {
-    updateHeader();
-    updateSidebar(selectedProject);
-    updateContent(selectedProject);
+  updateHeader();
+  updateSidebar(selectedProject);
+  updateContent(selectedProject);
 }
 
 function updateHeader() {
-    document.querySelector('.header>img').src = checklist;
+  document.querySelector(".header>img").src = checklist;
 }
 
 function updateSidebar(selectedProject) {
-    document.querySelector('#All>img').src = allImage;
-    document.querySelector('#Today>img').src = todayImage;
-    document.querySelector('#Week>img').src = weekImage;
-    document.querySelector('#Important>img').src = importantImage;
+  document.querySelector("#All>img").src = allImage;
+  document.querySelector("#Today>img").src = todayImage;
+  document.querySelector("#Week>img").src = weekImage;
+  document.querySelector("#Important>img").src = importantImage;
 
-    document.querySelector('#All').className = 'division';
-    document.querySelector('#Today').className = 'division';
-    document.querySelector('#Week').className = 'division';
-    document.querySelector('#Important').className = 'division';
+  document.querySelector("#All").className = "division";
+  document.querySelector("#Today").className = "division";
+  document.querySelector("#Week").className = "division";
+  document.querySelector("#Important").className = "division";
 
-    const projectSidebar = document.querySelector('.projects');
-    projectSidebar.innerHTML = '<h2>Projects<h2>';
+  const projectSidebar = document.querySelector(".projects");
+  projectSidebar.innerHTML = "<h2>Projects<h2>";
 
-    for (let i = 0; i < projects.length; i++) {
-        const project = projects[i];
+  for (let i = 0; i < projects.length; i++) {
+    const project = projects[i];
 
-        const projectDivision = document.createElement('div');
-        projectDivision.className = 'division';
-        projectDivision.id = project.getName();
+    const projectDivision = document.createElement("div");
+    projectDivision.className = "division";
+    projectDivision.id = project.getName();
 
-        const image = document.createElement('img');
-        image.src = projectImage;
-        const heading = document.createElement('h3');
-        heading.textContent = project.getName();
+    const image = document.createElement("img");
+    image.src = projectImage;
+    const heading = document.createElement("h3");
+    heading.textContent = project.getName();
 
-        projectDivision.appendChild(image);
-        projectDivision.appendChild(heading);
+    projectDivision.appendChild(image);
+    projectDivision.appendChild(heading);
 
-        projectSidebar.appendChild(projectDivision);
-    }
+    projectSidebar.appendChild(projectDivision);
+  }
 
-    document.querySelector(`#${selectedProject.getName()}`).className = 'division selected';
-    addEvents();
+  document.querySelector(`#${selectedProject.getName()}`).className =
+    "division selected";
+  addEvents();
 }
 
-function updateContent(selectedProject) {
-
-}
+function updateContent(selectedProject) {}
 
 function showNewProjectForm() {
-    const newProjectForm = document.createElement('form');
-    newProjectForm.innerHTML = `
+  const newProjectForm = document.createElement("form");
+  newProjectForm.innerHTML = `
         <div>
             <label for="project-name">Project Name</label>
             <input type="text" name="project-name" id="project-name" placeholder="Enter project name">
@@ -68,13 +71,12 @@ function showNewProjectForm() {
         <button id="cancel">Cancel</button>
     `;
 
-    document.querySelector('.main')
-        .appendChild(newProjectForm);
+  document.querySelector(".main").appendChild(newProjectForm);
 }
 
 function showNewTaskForm() {
-    const newTaskForm = document.createElement('form');
-    newTaskForm.innerHTML = `
+  const newTaskForm = document.createElement("form");
+  newTaskForm.innerHTML = `
         <div>
             <label for="task-name">Task Name</label>
             <input type="text" name="task-name" id="task-name" placeholder="Enter task name">
@@ -101,8 +103,7 @@ function showNewTaskForm() {
         <button id="cancel">Cancel</button>
     `;
 
-    document.querySelector('.main')
-        .appendChild(newTaskForm);
+  document.querySelector(".main").appendChild(newTaskForm);
 }
 
 export { updateDisplay, showNewProjectForm, showNewTaskForm };
